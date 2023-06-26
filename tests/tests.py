@@ -4,7 +4,7 @@ import unittest
 class MyTestCase(unittest.TestCase):
     def test_concepts(self):
         from n_gui.button import Button
-        button = Button()
+        button = Button('btn_01')
 
         counter = 0
 
@@ -29,6 +29,12 @@ class MyTestCase(unittest.TestCase):
         button.mouse_out = upon_mouse_out
         button.mouse_out()
         self.assertEqual(counter, 1)
+
+        self.assertEqual(button.name, 'Button_btn_01')
+
+    def test_tree(self):
+        from n_gui.tree import Tree
+        tree = Tree()
 
 
 if __name__ == '__main__':

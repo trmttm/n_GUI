@@ -1,7 +1,11 @@
 from .command import Command
+from .property import Property
+from .widget import Widget
 
 
-class Button:
+class Button(Widget):
     push = Command()
-    mouse_in = Command()
-    mouse_out = Command()
+    text = Property()
+
+    def __init__(self, widget_id: str):
+        super().__init__(widget_id)
