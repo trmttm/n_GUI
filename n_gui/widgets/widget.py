@@ -1,4 +1,4 @@
-from .command import Command
+from n_gui.command import Command
 
 
 class Widget:

@@ -3,7 +3,7 @@ import unittest
 
 class MyTestCase(unittest.TestCase):
     def test_concepts(self):
-        from n_gui.button import Button
+        from n_gui.widgets.button import Button
         button = Button('btn_01')
 
         counter = 0
@@ -33,8 +33,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(button.name, 'Button_btn_01')
 
     def test_tree(self):
-        from n_gui.tree import Tree
+        from n_gui.widgets.tree import Tree
         tree = Tree()
+        tree.select_row(0)
+        self.assertEqual(tree.selected_rows, (0,))
+
+        tree.select_rows((1, 3))
+        self.assertEqual(tree.selected_rows, (0, 1, 3))
 
 
 if __name__ == '__main__':

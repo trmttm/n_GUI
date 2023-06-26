@@ -1,5 +1,5 @@
-from .command import Command
-from .property import Property
+from n_gui.command import Command
+from n_gui.property import Property
 from .widget import Widget
 
 
