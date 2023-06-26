@@ -8,25 +8,25 @@ class MyTestCase(unittest.TestCase):
 
         counter = 0
 
-        def push_button(n: int = 1):
+        def upon_push_button(n: int = 1):
             nonlocal counter
             counter += n
 
-        def mouse_in():
-            push_button(2)
+        def upon_mouse_in():
+            upon_push_button(2)
 
-        def mouse_out():
-            push_button(-2)
+        def upon_mouse_out():
+            upon_push_button(-2)
 
-        button.push = lambda: push_button()
+        button.push = lambda: upon_push_button()
         button.push()
         self.assertEqual(counter, 1)
 
-        button.mouse_in = mouse_in
+        button.mouse_in = upon_mouse_in
         button.mouse_in()
         self.assertEqual(counter, 3)
 
-        button.mouse_out = mouse_out
+        button.mouse_out = upon_mouse_out
         button.mouse_out()
         self.assertEqual(counter, 1)
 
